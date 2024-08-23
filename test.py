@@ -6,8 +6,8 @@ from nltk.corpus import stopwords
 import nltk
 
 # Download resources if not already downloaded
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 # Load the saved model and label encoders
 model_filename = 'health_chatbot_model.pkl'
