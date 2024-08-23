@@ -6,7 +6,14 @@ from nltk.corpus import stopwords
 import nltk
 nltk.download('punkt_tab')
 nltk.download('stopwords')
+import joblib
+from sklearn.tree import DecisionTreeClassifier
 
+model = joblib.load('health_chatbot_model.pkl')
+
+# Check if the problematic attribute is in the model
+if hasattr(model, 'monotonic_cst'):
+    del model.monotonic_cst
 # Load the saved model and label encoders
 model_filename = 'health_chatbot_model.pkl'
 label_encoder_filename = 'label_encoders.pkl'
