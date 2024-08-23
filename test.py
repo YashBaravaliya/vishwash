@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
 nltk.download('punkt_tab')
+nltk.download('stopwords')
 
 # Load the saved model and label encoders
 model_filename = 'health_chatbot_model.pkl'
