@@ -4,10 +4,16 @@ import pandas as pd
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
+import os
+import nltk
 
-# Download resources if not already downloaded
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk_data_dir = "./resources/nltk_data_dir/"
+if not os.path.exists(nltk_data_dir):
+    os.makedirs(nltk_data_dir, exist_ok=True)
+nltk.data.path.clear()
+nltk.data.path.append(nltk_data_dir)
+nltk.download("stopwords", download_dir=nltk_data_dir)
+nltk.download('punkt', download_dir=nltk_data_dir)
 
 # Load the saved model and label encoders
 model_filename = 'health_chatbot_model.pkl'
